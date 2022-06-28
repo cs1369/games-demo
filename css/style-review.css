@@ -14,8 +14,7 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center ;
-    overflow: scroll;
-    overflow-y: hidden;
+    
 }
 .list__container{
     height: 35rem;
@@ -24,6 +23,7 @@ body{
     align-items: center;
     padding: 1rem;
     margin-bottom: 2rem;
+    overflow: scroll;
     
 }
 .tabla__titulo{
