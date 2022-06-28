@@ -31,6 +31,7 @@ main{
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    position: relative;
 }
 .juego__palabra-txt{
     color: #ffff;
@@ -77,4 +78,10 @@ main{
 }
 .resultado{
     font-size: 2rem;
+}
+.repaso{
+    margin-bottom: 1rem;
+    color: white;
+    position: absolute;
+    bottom: 0;
 }

@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: none;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Roboto Mono', monospace;
+    
+}
+body{ 
+    height: 100vh;
+    background-image: url(/img/fondo-mobile.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center ;
+    overflow: auto;
+    
+}
+.list__container{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+.tabla__titulo{
+    background: #eb5e28;
+    color: #fffcf2;
+    width: 100%;
+    text-align: center;
+    border: 1px solid black;
+}
+.tabla__subtitulos{
+    display: flex;
+    width: 100%;
+    border: 1px solid black;
+}
+.subtitulos-txt{
+    width: 50%;
+    text-align: center;
+    color: #fffcf2;
+    background: #eb5f28e7;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.subtitulos-txt:nth-child(1){
+    border-right: 1px solid black;
+}
+.tabla__body{
+    border: 1px solid black;
+    display: flex;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.438);
+    color: white;
+}
+.tabla__body-txt{
+    width: 50%;
+    text-align: center;
+    font-weight: bold;
+}
+.tabla__body:nth-child(odd){
+    background: #eb5f2894;
+    border: 1px solid #eb5e28;
+    
+}

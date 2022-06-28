@@ -629,57 +629,19 @@ const palabras = [{
     wordEsp:"cerrar"
 }
 ];
-
-const verificar = document.querySelector(".verificar");
-const seguir = document.querySelector(".seguir");
-const juegoPalabras = document.querySelector(".juego__palabra");
-const juegotxt = document.querySelector(".juego__input");
-let numeroX = -1;
-let estado;
-seguir.addEventListener("click",()=>{
-    let numRandom = palabraRandom(palabras.length);
-    seguir.textContent="Otra Palabra";
-    juegotxt.value="";
-    document.querySelector(".resultado").textContent="";
-
-    if(numeroX > numRandom || numeroX === numRandom){
-        juegoPalabras.textContent=palabraMayus(palabras[numRandom].wordEsp);
-        document.querySelector(".respuesta__idioma").textContent = "Ingles";
-        numeroX=numRandom;
-        estado=true;
-    }
-    else{
-        juegoPalabras.textContent=palabraMayus(palabras[numRandom].wordIng);
-        document.querySelector(".respuesta__idioma").textContent = "Español";
-        numeroX=numRandom;
-        estado=false;
-    }
-});
-verificar.addEventListener("click",()=>{
-    if(estado){
-        if(palabras[numeroX].wordIng.toLowerCase() == juegotxt.value.toLowerCase()){
-            document.querySelector(".resultado").style.color="#8ac926";
-            document.querySelector(".resultado").textContent="¡Correcto!"
-        }
-        else{
-            document.querySelector(".resultado").style.color="#e63946";
-            document.querySelector(".resultado").textContent="¡Incorrecto!"
-        }
-    }else{
-        if(palabras[numeroX].wordEsp.toLowerCase() === juegotxt.value.toLowerCase()){
-            document.querySelector(".resultado").style.color="#8ac926";
-            document.querySelector(".resultado").textContent="¡Correcto!"
-        }
-        else{
-            document.querySelector(".resultado").style.color="#e63946";
-            document.querySelector(".resultado").textContent="¡Incorrecto!"
-        }
-    } 
-})
-function palabraRandom(tam){
-    return Math.floor(Math.random()*tam);
+let cadena="";
+for(let lista of palabras){
+    cadena+=`
+    <div class="tabla__body">
+    <p class="tabla__body-txt">${lista.wordIng}</p>
+    <p class="tabla__body-txt">${lista.wordEsp}</p>
+    </div>
+    `;
 }
-function palabraMayus(palabra){
-    return palabra.charAt(0).toUpperCase()+palabra.slice(1);
-}
-
+document.querySelector(".list__container").innerHTML=`
+    <h1 class="tabla__titulo">Palabras</h1>
+    <div class="tabla__subtitulos">
+    <p class="subtitulos-txt">Ingles</p>
+    <p class="subtitulos-txt">Español</p>
+    </div>
+`+cadena;
